@@ -1,6 +1,6 @@
 const savePreset = (req, res) => { 
       console.log(req.body)
-      res.json({ status:200}) //Test
+      res.json({ status:200})
 }
 
 module.exports = { savePreset };
