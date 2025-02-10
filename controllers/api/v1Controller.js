@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 const atlasUri = "mongodb+srv://freerhyme:Qwe123qwe@cluster0.nebai.mongodb.net/folsaves?retryWrites=true&w=majority"
 const client = new MongoClient(atlasUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const savePreset = async (req, res) => { 
+const savePreset = async (req, res, next) => { 
       const savedata = req.body
       //Generate unique id for identifier with character length of 18
       savedata.key = Math.random().toString(36).substr(2, 25);
