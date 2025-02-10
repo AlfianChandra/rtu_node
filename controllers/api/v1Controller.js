@@ -5,7 +5,7 @@ const client = new MongoClient(atlasUri, { useNewUrlParser: true, useUnifiedTopo
 const savePreset = async (req, res) => { 
       const savedata = req.body
       //Generate unique id for identifier with character length of 18
-      savedata.key = Math.random().toString(36).substr(2, 18);
+      savedata.key = Math.random().toString(36).substr(0, 22);
       try {
             await client.connect();
             const db = client.db("folsaves");
@@ -16,6 +16,14 @@ const savePreset = async (req, res) => {
             res.status(500).send({ status:500, message: 'Error saving preset' });
       } finally { 
             await client.close();
+      }
+}
+
+const getPresets = async (req, res) => { 
+      try {
+            
+      } catch (error) { 
+
       }
 }
 
