@@ -21,10 +21,14 @@ const savePreset = async (req, res) => {
 
 const getPresets = async (req, res) => { 
       try {
-            
+            await client.connect();
+            const db = client.db("folsaves");
+            const collection = db.collection("savedata");
+            const presets = await collection.find({}).toArray();
+            res.status(200).send({ status:200, data: presets });
       } catch (error) { 
-
+            res.status(500).send({ status:500, message: 'Error fetching presets' });
       }
 }
 
-module.exports = { savePreset };
+module.exports = { savePreset, getPresets };
