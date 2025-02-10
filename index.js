@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const v1Routes = require('./routes/api/v1');
 const dbUri = 'mongodb+srv://freerhyme:Qwe123qwe@cluster0.nebai.mongodb.net/folsaves?retryWrites=true&w=majority';
 const app = express();
-const APP_PORT = 3000;
+const APP_PORT = 3001;
 const APP_HOST = 'localhost';
 app.use(cors());
 app.disable('x-powered-by');
