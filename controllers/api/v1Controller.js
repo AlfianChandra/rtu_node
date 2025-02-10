@@ -5,7 +5,7 @@ const client = new MongoClient(atlasUri, { useNewUrlParser: true, useUnifiedTopo
 const savePreset = async (req, res) => { 
       const savedata = req.body
       //Generate unique id for identifier with character length of 18
-      savedata.key = Math.random().toString(36).substr(0, 22);
+      savedata.key = Math.random().toString(36).substr(2, 25);
       try {
             await client.connect();
             const db = client.db("folsaves");
