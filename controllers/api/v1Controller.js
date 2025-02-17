@@ -40,7 +40,7 @@ const getPresetById = async (req, res) => {
             const collection = db.collection("savedata");
             const preset = await collection.findOne({ key });
             res.status(200).send({ status:200, data: preset });
-      } catch (error) { 
+      } catch (error) { //
             res.status(500).send({ status:500, message: 'Error fetching preset' });
       }
 }
